@@ -1,5 +1,5 @@
 # AlgorandTransactionCounter
-A Simple Python Script that Tracks Algorand Blockchain Transactions (Node Required)
+A Simple Python Script that Tracks Algorand Blockchain Transactions (Includes Inner Transactions) [Node Required]
 
 ## Installation
 To use this script, you need to have an Algorand node running. Follow the instructions in the official documentation to set up your node or watch the Youtube Video Linked.
