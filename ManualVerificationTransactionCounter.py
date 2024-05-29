@@ -11,33 +11,33 @@ algod_port = 'http://0.0.0.0:0000' #INSERT NODE PORT HERE
 algod_client = AlgodClient(algod_token, algod_port)
 
 last_block_cursor = 0
+
 while True:
-    try:
-        status = algod_client.status()
-        last_block = status.get('last-round', '')
-        if last_block_cursor < last_block:
-            last_block_cursor = last_block
-            block_txs = algod_client.block_info(last_block)['block']['txns']
-            print(f"Block Number: {last_block}")
+    status = algod_client.status()
+    last_block = status.get('last-round', '')
+    if last_block_cursor < last_block:
+        last_block_cursor = last_block
+        block_txs = algod_client.get_block_txids(last_block)['blockTxids']
+        print("Block Number: ", {last_block})
 
-            transaction_counter = 0
-            inner_transaction_counter = 0
-
-            for tx in block_txs:
-                tx_info = algod_client.pending_transaction_info(tx['tx'])
-                
-                inner_transactions = tx_info.get('inner-txns', [])
-                
-                if not inner_transactions:
-                    transaction_counter += 1
-                else:
-                    inner_transaction_counter += len(inner_transactions)
+        transaction_counter = 0
+        inner_transaction_counter = 0
+        
+        for tx in block_txs:
+            tx_info = algod_client.pending_transaction_info(tx)
+            inner_transactions = tx_info.get('inner-txns', '')
+            
+            if inner_transactions == '':
+                transaction_counter += 1
+            
+            else:
+                for tx in inner_transactions:
+                    inner_transaction_counter += 1
                     
-            print(f"Total Transaction Count: {transaction_counter}")
-            print(f"Total Inner Transaction Count: {inner_transaction_counter}")
-            print(f"Transaction Sum: {transaction_counter + inner_transaction_counter}\n")
+        print("Total Transaction Count: ", {transaction_counter})
+        print("Total Inner Transaction Count: ", {inner_transaction_counter})
+        print("Transaction Sum: ", {transaction_counter + inner_transaction_counter})
+        print('\n')
 
-    except Exception as e:
-        print(f"Error: {e}")
         
     time.sleep(1)
