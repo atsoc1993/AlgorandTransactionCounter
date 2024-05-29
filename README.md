@@ -2,6 +2,14 @@
 A Simple Python Script that Tracks Algorand Blockchain Transactions (Includes Inner Transactions) [Node Required]
 > Note: There is an automatic counter (easy and quick implementation) and a manual transaction counter. The automatic counter takes the difference of the previous block's transaction count and the current block's transaction count (Transaction counts are hardcoded into each block's details). The manual counter reads a transaction in a more intricate fashion, see the ProofOfConcept.py for a better understanding of how the manual counter works. 
 
+# AlgodClient Class Methods Used [Automatic Counter]:
+- status()
+- block_info(block: int)
+  
+# AlgodClient Class Methods Used [Manual Counter]:
+- status()
+- get_block_tx_ids(round_num: int)
+- pending_transaction_info(transaction_id: str)
 
 ## Installation
 To use this script, you need to have an Algorand node running. Follow the instructions in the official documentation to set up your node or watch the Youtube Video Linked.
