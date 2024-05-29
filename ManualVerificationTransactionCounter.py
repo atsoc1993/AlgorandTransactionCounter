@@ -31,6 +31,7 @@ while True:
                 transaction_counter += 1
             
             else:
+                transaction_counter += 1
                 for tx in inner_transactions:
                     inner_transaction_counter += 1
                     
