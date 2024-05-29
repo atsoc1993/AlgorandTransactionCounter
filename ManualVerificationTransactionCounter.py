@@ -35,9 +35,9 @@ while True:
                 for tx in inner_transactions:
                     inner_transaction_counter += 1
                     
-        print("Total Transaction Count: ", {transaction_counter})
-        print("Total Inner Transaction Count: ", {inner_transaction_counter})
-        print("Transaction Sum: ", {transaction_counter + inner_transaction_counter})
+        print(f'Total Transaction Count: {transaction_counter}')
+        print(f'Total Inner Transaction Count: {inner_transaction_counter}')
+        print(f'Transaction Sum: {transaction_counter + inner_transaction_counter}')
         print('\n')
 
         
