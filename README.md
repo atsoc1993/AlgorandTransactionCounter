@@ -1,6 +1,6 @@
 # AlgorandTransactionCounter
 A Simple Python Script that Tracks Algorand Blockchain Transactions (Includes Inner Transactions) [Node Required]
-> Note: There is an automatic counter (easy comprehension) and a manual transaction counter that reads a transaction in a more intricate fashion for proof of concept. See the ProofOfConcept.py for a better understanding of how the manual counter works.
+> Note: There is an automatic counter (easy and quick implementation) and a manual transaction counter. The automatic counter takes the difference of the previous block's transaction count and the current block's transaction count.(Transaction counts are hardcoded into each block's details). The manual counter reads a transaction in a more intricate fashion, see the ProofOfConcept.py for a better understanding of how the manual counter works. 
 
 
 ## Installation
