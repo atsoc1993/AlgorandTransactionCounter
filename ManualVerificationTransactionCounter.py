@@ -2,7 +2,7 @@ from algosdk.v2client.algod import AlgodClient
 import time
 
 # Setup an Algorand node @ https://developer.algorand.org/docs/run-a-node/setup/install/
-# Youtube Tutorial to Setup a Node: https://www.youtube.com/watch?v=sbGoXaWOIcA (IGNORE THAT THE TITLE SAYS "RELAY NODE", THIS IS FOR A PARTICIPATION NODE)
+# Youtube Tutorial to Setup a Node: https://www.youtube.com/watch?v=sbGoXaWOIcA (IGNORE THAT THE TITLE SAYS "RELAY NODE", THIS IS FOR A NON-RELAY/NON-ARCHIVAL NODE)
 # Use 'cat algod.token' and 'cat algod.net' terminal commands in data directory of node to obtain node token and node port respectively
 # Port can be manually adjusted by using 'cp config.json.example config.json' and adjusting "EndPointAddress" setting
 
